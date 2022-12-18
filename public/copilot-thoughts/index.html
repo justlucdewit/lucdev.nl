@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="http://lukedev.nl/style.css">
+    <link rel="stylesheet" href="http://lukedev.nl/color/purple.css">
+
+        <link rel="stylesheet" href="http://lukedev.nl/color/background_blue.css">
+    
+    <link rel="stylesheet" href="http://lukedev.nl/font-hack-subset.css">
+
+        <link rel="shortcut icon" type="image/png" href="https://media.discordapp.net/attachments/375936269907263489/1054147971551342652/normal_luke.png">
+    
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="http://lukedev.nl/" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            lukedev.nl
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="http://lukedev.nl/">Home</a></li>
+            
+                <li><a href="http://lukedev.nl//projects">Projects</a></li>
+            
+                <li><a href="http://lukedev.nl//blog">Blog</a></li>
+            
+                <li><a href="https://github.com/justlucdewit" target="_blank" rel="noopener noreferrer">Github</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content" style="display: block;">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="http://lukedev.nl/copilot-thoughts/">Thoughts on ‘Github Copilot’ after 4 months</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2022-08-16
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="http://lukedev.nl/tags/ai/">#AI</a>&nbsp;
+                <a class="post-tag" href="http://lukedev.nl/tags/tools/">#tools</a>&nbsp;
+                <a class="post-tag" href="http://lukedev.nl/tags/opinion/">#opinion</a></span>
+    
+
+        
+        <div class="post-content">
+            <h2 id="i-tried-github-copilot-for-4-months-here-are-my-thoughts-tips-and-tricks">I Tried Github Copilot for 4 months, here are my thoughts, tips, and tricks.</h2>
+<br />
+<h3 id="github-copilot">Github Copilot</h3>
+<p>Earlier in 2019, Github revealed its latest project: Github Copilot, an AI-based on OpenAPI GPT-3, and I was among the people to try it out for free. This article is about my thoughts on the experience, and some tips/tricks I discovered while using it.</p>
+<br />
+<h3 id="beta-access">Beta access</h3>
+<p>Before Github Copilot was available for the general public, Github decided to make a beta testing program where people could join a queue to try it out until it was released. I was one of the lucky people that gained access to this program and as soon as I set it up, I was hooked.</p>
+<br />
+<h3 id="initial-impressions">Initial impressions</h3>
+<p>Once I saw that I was accepted to the beta testing program, I quickly set it up on visual studio code and started making a small 1-day project to see how it affected my workflow, and I quite quickly found out that this has the capabilities to revolutionize the way and speed at which I code.</p>
+<br />
+<h3 id="first-project">First project</h3>
+<p>I decided to do a quick 1-day project to see how Github Copilot will affect my workflow. My idea was to make a personal finance API that could track and summarize transactions over multiple banking accounts.</p>
+<p>I decided to do this in express.js, a NodeJS framework for backend servers and APIs. As soon as I started with the standard technique of writing comments and letting Copilot do its job, I could generate the endpoints very fast and without that much trouble.</p>
+<p>The only issue I sometimes experienced was Github Copilot getting into an infinite loop of repeating itself, and generating longer and longer lines of code</p>
+<p><img src="https://miro.medium.com/max/720/0*rEpsAg7UUOgqkPYu" alt="repeating issue" /></p>
+<p>There wasn't any way for me to fix this except for writing some of the code myself or formulating the comment in another way, Which was annoying.</p>
+<p>These days Github copilot does seem to perform much better though, and I get issues like this way less often.</p>
+<br />
+<h3 id="other-use-cases">Other use cases</h3>
+<p>Another way to use Github, which I often do, is to do the process in reverse, instead of writing comments and letting Github copilot figure out the code, you could write the code and let Copilot figure out the comments.</p>
+<p>That way you could easily develop the habit of properly documenting your code, without having to think about what to write.</p>
+<p>Often, however, I use a mix of both writing the code, and writing the comments. I find this to work the nicest for me, but it's important everyone figures that out for themselves.</p>
+<br />
+<h3 id="downsides">Downsides</h3>
+<p>Using Github Copilot also comes with its downsides, I would not use it if I was super scared of accidentally having code of someone else in my codebase (tho it is trained on open-source code, so that shouldn't matter).</p>
+<p>Also, Github Copilot can work very terribly on non-mainstream programming languages. I had to disable copilot for AL and C/AL because it kept generating syntactically flawed code, even tho the context had plenty of examples of how the AL syntax worked.</p>
+<br />
+<h3 id="conclusion">Conclusion</h3>
+<p>Github Copilot can be a helpful tool in your development process and ca revolutionize the way you code. However, it is still important to keep in mind the diverse ways of making use of Copilot, and trying to figure out whatever workflow works for you.</p>
+
+        </div>
+
+        
+        <div class="pagination">
+            <div class="pagination__title">
+                <span class="pagination__title-h">Thanks for reading! Read other posts?</span>
+                <hr />
+            </div>
+            <div class="pagination__buttons">
+                
+                    <span class="button next">
+                        <a href="http://lukedev.nl/ai-based-programming-language/">
+                            <span class="button__text">AI based natural programming language</span>&nbsp;
+                            <span class="button__icon">→</span>
+                        </a>
+                    </span>
+                </div>
+        </div>
+    
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright copyright--user">Website Created By <a href='https://github.com/justlucdewit' style='padding-left: 10px'>Luc de Wit</a></div>
+            </div>
+    </footer>
+    
+
+    <script>
+        // Find element with id age
+        const el_age = document.getElementById('age');
+
+        // Set birth to 30 july 2001 at 19:00
+        const birth = new Date(2001, 6, 30, 19, 0, 0);
+
+        // In a loop, update age every second
+        setInterval(() => {
+            // Get current date
+            const now = new Date();
+
+            // Calculate age as float
+            const age = (now - birth) / 1000 / 60 / 60 / 24 / 365;
+
+            // Update age
+            el_age.innerHTML = age.toFixed(8);
+        }, 200);
+
+        const contactForm = () => {
+            const msg = document.getElementById('msg').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            document.getElementById('msg').value = ""
+            document.getElementById('name').value = ""
+            document.getElementById('email').value = ""
+
+            alert("message send!");
+
+            // send message via discord webhook
+            fetch('https://discord.com/api/webhooks/1027939719058829342/eaZtxghceOFzGaRbceCacKn3c7wcwAH8o-rj8awXPI5peFRb4OPdqJtExOdCop0Xf0tR', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    content: '<@332071218066751490> \n' + '**msg from: ' + name + ' (' + email + ')' + '**:\n```' + msg + '```'
+                })
+            })
+        }
+
+        const avatars = [
+            "black", "comradeluke", "github", "green", "red", "python", "love"
+        ];
+
+        const randomAvatar = () => {
+            let avatar = avatars[Math.floor(Math.random() * avatars.length)];
+            
+            // In october use halloween or frankenluke instead
+            if (new Date().getMonth() == 9) {
+                avatar = "frankenluke";
+            }
+            
+            // In june use bi instead
+            if (new Date().getMonth() == 5) {
+                avatar = "bi";
+            }
+            
+            document.getElementById('avatar').src = '/images/lukes/' + avatar + '.png';
+        }
+
+        randomAvatar();
+    </script>
+
+</div>
+</body>
+
+</html>

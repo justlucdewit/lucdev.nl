@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="http://lukedev.nl/style.css">
+    <link rel="stylesheet" href="http://lukedev.nl/color/purple.css">
+
+        <link rel="stylesheet" href="http://lukedev.nl/color/background_blue.css">
+    
+    <link rel="stylesheet" href="http://lukedev.nl/font-hack-subset.css">
+
+        <link rel="shortcut icon" type="image/png" href="https://media.discordapp.net/attachments/375936269907263489/1054147971551342652/normal_luke.png">
+    
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="http://lukedev.nl/" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            lukedev.nl
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="http://lukedev.nl/">Home</a></li>
+            
+                <li><a href="http://lukedev.nl//projects">Projects</a></li>
+            
+                <li><a href="http://lukedev.nl//blog">Blog</a></li>
+            
+                <li><a href="https://github.com/justlucdewit" target="_blank" rel="noopener noreferrer">Github</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content" style="display: block;">
+        
+    <div class="post">
+        <h1 class="post-title">
+            tag: #tools
+            (1 post)
+        </h1>
+
+        <a href="http://lukedev.nl//tags">
+            Show all tags
+        </a>
+
+        
+    <ul><li class="post-list">
+            <a href="http://lukedev.nl/copilot-thoughts/">
+                <span class="post-date">2022-08-16</span>
+                :: <span class="post-list-title">Thoughts on ‘Github Copilot’ after 4 months</span></a>
+            
+        <span class="post-tags-inline">
+                ::
+                <a class="post-tag" href="http://lukedev.nl/tags/ai/">#AI</a>,
+                <a class="post-tag" href="http://lukedev.nl/tags/tools/">#tools</a>,
+                <a class="post-tag" href="http://lukedev.nl/tags/opinion/">#opinion</a></span>
+    
+        </li>
+    </ul>
+
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright copyright--user">Website Created By <a href='https://github.com/justlucdewit' style='padding-left: 10px'>Luc de Wit</a></div>
+            </div>
+    </footer>
+    
+
+    <script>
+        // Find element with id age
+        const el_age = document.getElementById('age');
+
+        // Set birth to 30 july 2001 at 19:00
+        const birth = new Date(2001, 6, 30, 19, 0, 0);
+
+        // In a loop, update age every second
+        setInterval(() => {
+            // Get current date
+            const now = new Date();
+
+            // Calculate age as float
+            const age = (now - birth) / 1000 / 60 / 60 / 24 / 365;
+
+            // Update age
+            el_age.innerHTML = age.toFixed(8);
+        }, 200);
+
+        const contactForm = () => {
+            const msg = document.getElementById('msg').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            document.getElementById('msg').value = ""
+            document.getElementById('name').value = ""
+            document.getElementById('email').value = ""
+
+            alert("message send!");
+
+            // send message via discord webhook
+            fetch('https://discord.com/api/webhooks/1027939719058829342/eaZtxghceOFzGaRbceCacKn3c7wcwAH8o-rj8awXPI5peFRb4OPdqJtExOdCop0Xf0tR', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    content: '<@332071218066751490> \n' + '**msg from: ' + name + ' (' + email + ')' + '**:\n```' + msg + '```'
+                })
+            })
+        }
+
+        const avatars = [
+            "black", "comradeluke", "github", "green", "red", "python", "love"
+        ];
+
+        const randomAvatar = () => {
+            let avatar = avatars[Math.floor(Math.random() * avatars.length)];
+            
+            // In october use halloween or frankenluke instead
+            if (new Date().getMonth() == 9) {
+                avatar = "frankenluke";
+            }
+            
+            // In june use bi instead
+            if (new Date().getMonth() == 5) {
+                avatar = "bi";
+            }
+            
+            document.getElementById('avatar').src = '/images/lukes/' + avatar + '.png';
+        }
+
+        randomAvatar();
+    </script>
+
+</div>
+</body>
+
+</html>

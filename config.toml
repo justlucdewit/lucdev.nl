@@ -1,0 +1,28 @@
+theme = "terminimal"
+base_url = "http://lukedev.nl/"
+compile_sass = true
+build_search_index = true
+
+taxonomies = [
+    {name = "tags"}
+]
+
+[markdown]
+highlight_code = true
+
+[extra]
+logo_text = "lukedev.nl"
+accent_color = "purple"
+author = "Luc de Wit"
+copyright_html = "Website Created By <a href='https://github.com/justlucdewit' style='padding-left: 10px'>Luc de Wit</a>"
+menu_items = [
+    {name = "Home", url = "$BASE_URL"},
+    {name = "Projects", url = "$BASE_URL/projects"},
+    {name = "Blog", url = "$BASE_URL/blog"},
+    {name = "Github", url = "https://github.com/justlucdewit", newtab = true}
+    # {name = "Arhive", url = "$BASE_URL/archive"},
+    # {name = "Tags", url = "$BASE_URL/tags"},
+]
+
+favicon = "https://media.discordapp.net/attachments/375936269907263489/1054147971551342652/normal_luke.png"
+favicon_mimetype = "image/png"

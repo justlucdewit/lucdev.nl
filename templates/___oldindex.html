@@ -1,0 +1,210 @@
+{% import "macros/date.html" as date_macros -%}
+{% import "macros/head.html" as head_macros -%}
+{% import "macros/menu.html" as menu_macros -%}
+{% import "macros/post.html" as post_macros -%}
+
+<!DOCTYPE html>
+<html lang="{%- if config.default_language -%}{{ config.default_language }}{%- else -%}en{%- endif -%}">
+
+<head>
+    <title>{%- block title %}{{ config.title }}{% endblock title -%}</title>
+    {{ head_macros::head(config=config) }}
+
+    {%- if config.generate_feed %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml") | safe }}">
+    {% endif -%}
+
+    {%- if config.extra.favicon %}
+        <link rel="shortcut icon" type="{{ config.extra.favicon_mimetype | default(value="image/x-icon") | safe }}" href="{{ config.extra.favicon | safe }}">
+    {% endif -%}
+
+    {%- block extra_head %}
+    {% endblock extra_head -%}
+</head>
+
+<body class="">
+<div class="container">
+    {% block header %}
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                {%- if config.logo_home_link %}
+                    {% set logo_link = config.logo_home_link %}
+                {% else %}
+                    {% set logo_link = config.base_url %}
+                {% endif -%}
+                <a href="{{ logo_link | safe }}" style="text-decoration: none;">
+                    <div class="logo">
+                      {% block logo_content %}
+                        {%- if config.extra.logo_text %}
+                            {{ config.extra.logo_text }}
+                        {% else %}
+                            Terminimal theme
+                        {% endif -%}
+                        {% endblock logo_content %}
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        {% block header_menu %}
+        {{ menu_macros::menu(config=config, current_path=current_path) }}
+        {% endblock header_menu %}
+    </header>
+    {% endblock header %}
+
+    <div>
+        <ul>
+            <li>Hi, My name is Luc.</li>
+            <li>I am a &lt;Software Dev /&gt;</li>
+            <li>I am <span id="age" style="display: inline;"></span> years old</li>
+            <li>I enjoy <b>Coding, Drumming, VR gaming</li>
+        </ul>
+    </div>
+
+    <div style="margin-top: 20px; font-weight: normal;">
+        <p>
+            Hi, my name is Luc (my online alias is 'Luke_'), and ive always been curious about the world around me. Ever since I've touched my first computer, I've been wanting to find out how it and its applications worked.
+        </p>
+        
+        <p>
+            When I was 14 years old I started learning about how to write batch scripts and how to use them to create terminal based text adventure games on windows. From there I ended up shifting towards web development with HTML CSS and JavaScript. Later I also found out about programming outside of the browser, via languages like python and C.
+        </p>
+
+        <p>
+            Since then, ive been expanding my skills and knowledge in this area and became really invested into the world of software development. The most important thing about it is not your skills, but your joy, when you practice something that you really enjoy, you automatically gain skill and expertise over time. 
+        </p>
+    </div>
+
+    <div class="content">
+        {% block content %}
+        <div class="posts">
+            {%- if paginator %}
+                {%- set show_pages = paginator.pages -%}
+            {% else %}
+                {%- set show_pages = section.pages -%}
+            {% endif -%}
+
+            {%- for page in show_pages %}
+                <div class="post on-list">
+                    {{ post_macros::header(page=page) }}
+                    {{ post_macros::content(page=page, summary=true) }}
+                </div>
+            {% endfor -%}
+            <div class="pagination">
+                <div class="pagination__buttons">
+                {%- if paginator.previous %}
+                    <span class="button previous">
+                        <a href="{{ paginator.previous | safe }}">
+                            <span class="button__icon">←</span>&nbsp;
+                            <span class="button__text">Newer posts</span>
+                        </a>
+                    </span>
+                {% endif -%}
+                {%- if paginator.next %}
+                    <span class="button next">
+                        <a href="{{ paginator.next | safe }}">
+                            <span class="button__text">Older posts</span>&nbsp;
+                            <span class="button__icon">→</span>
+                        </a>
+                    </span>
+                {% endif -%}
+                </div>
+            </div>
+        </div>
+        {% endblock content %}
+    </div>
+
+    {% block footer %}
+    <footer class="footer">
+        <div class="footer__inner">
+            {%- if config.extra.copyright_html %}
+                <div class="copyright copyright--user">{{ config.extra.copyright_html | safe }}</div>
+            {% else %}
+                <div class="copyright">
+                    {%- if config.extra.author %}
+                        <span>© {{ date_macros::now_year() }} {{ config.extra.author }}</span>
+                    {% else %}
+                        <span>© {{ date_macros::now_year() }} Powered by <a href="https://www.getzola.org/">Zola</a></span>
+                    {% endif -%}
+
+                    <span class="copyright-theme">
+                        <span class="copyright-theme-sep">:: </span>
+                        Theme: <a href="https://github.com/pawroman/zola-theme-terminimal/">Terminimal</a> by pawroman
+                    </span>
+                </div>
+            {% endif -%}
+        </div>
+    </footer>
+    {% endblock footer %}
+
+    <script>
+        // Find element with id age
+        const el_age = document.getElementById('age');
+
+        // Set birth to 30 july 2001 at 19:00
+        const birth = new Date(2001, 6, 30, 19, 0, 0);
+
+        // In a loop, update age every second
+        setInterval(() => {
+            // Get current date
+            const now = new Date();
+
+            // Calculate age as float
+            const age = (now - birth) / 1000 / 60 / 60 / 24 / 365;
+
+            // Update age
+            el_age.innerHTML = age.toFixed(8);
+        }, 200);
+
+        const contactForm = () => {
+            const msg = document.getElementById('msg').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            document.getElementById('msg').value = ""
+            document.getElementById('name').value = ""
+            document.getElementById('email').value = ""
+
+            alert("message send!");
+
+            // send message via discord webhook
+            fetch('https://discord.com/api/webhooks/1027939719058829342/eaZtxghceOFzGaRbceCacKn3c7wcwAH8o-rj8awXPI5peFRb4OPdqJtExOdCop0Xf0tR', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    content: '<@332071218066751490> \n' + '**msg from: ' + name + ' (' + email + ')' + '**:\n```' + msg + '```'
+                })
+            })
+        }
+
+        const avatars = [
+            "black", "comradeluke", "github", "green", "red", "python", "love"
+        ];
+
+        const randomAvatar = () => {
+            let avatar = avatars[Math.floor(Math.random() * avatars.length)];
+            
+            // In october use halloween or frankenluke instead
+            if (new Date().getMonth() == 9) {
+                avatar = "frankenluke";
+            }
+            
+            // In june use bi instead
+            if (new Date().getMonth() == 5) {
+                avatar = "bi";
+            }
+            
+            document.getElementById('avatar').src = '/images/lukes/' + avatar + '.png';
+        }
+
+        randomAvatar();
+    </script>
+
+</div>
+{%- block extra_body %}
+{% endblock extra_body -%}
+</body>
+
+</html>

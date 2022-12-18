@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="noodp"/>
+
+    <link rel="stylesheet" href="http://lukedev.nl/style.css">
+    <link rel="stylesheet" href="http://lukedev.nl/color/purple.css">
+
+        <link rel="stylesheet" href="http://lukedev.nl/color/background_blue.css">
+    
+    <link rel="stylesheet" href="http://lukedev.nl/font-hack-subset.css">
+
+        <link rel="shortcut icon" type="image/png" href="https://media.discordapp.net/attachments/375936269907263489/1054147971551342652/normal_luke.png">
+    
+    </head>
+
+<body class="">
+<div class="container">
+    
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                    
+                <a href="http://lukedev.nl/" style="text-decoration: none;">
+                    <div class="logo">
+                      
+                            lukedev.nl
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        
+        
+                <nav class="menu">
+            <ul class="menu__inner">
+                <li class="active"><a href="http://lukedev.nl/">Home</a></li>
+            
+                <li><a href="http://lukedev.nl//projects">Projects</a></li>
+            
+                <li><a href="http://lukedev.nl//blog">Blog</a></li>
+            
+                <li><a href="https://github.com/justlucdewit" target="_blank" rel="noopener noreferrer">Github</a></li>
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    
+
+    <div class="content" style="display: block;">
+        
+    <div class="post">
+        
+    <h1 class="post-title"><a href="http://lukedev.nl/ai-based-programming-language/">AI based natural programming language</a></h1>
+    <div class="post-meta-inline">
+        
+    <span class="post-date">
+            2022-12-18
+        </span>
+
+    </div>
+
+    
+        <span class="post-tags-inline">
+                :: tags:&nbsp;
+                <a class="post-tag" href="http://lukedev.nl/tags/ai/">#AI</a>&nbsp;
+                <a class="post-tag" href="http://lukedev.nl/tags/language/">#language</a></span>
+    
+
+        
+        <div class="post-content">
+            <br />
+<h2 id="esoteric-programming-languages">Esoteric programming languages</h2>
+<p>For the past year or so, I've been looking at language development, and growing
+as a member of the programming language development and design community
+(<a href="http://proglangdesign.net/">see here</a>).</p>
+<p>I've learned a lot of things in this time period, but the thing that was
+probably the most fascinating and interesting was the concept of 'esoteric
+languages'. I looked through a lot of different concepts
+(<a href="https://esolangs.org/wiki/LOLCODE">lolcode</a>, <a href="https://esolangs.org/wiki/Brainfuck">brainfuck</a>,
+<a href="https://esolangs.org/wiki/Velato">velato</a>, <a href="https://esolangs.org/wiki/Piet">piet</a>,
+and more...), all of whom use different mediums (textual programming languages, .png file programming languages, and even midi file programming languages).</p>
+<p>But they also defer in paradigm, you have the classic <a href="https://en.wikipedia.org/wiki/Procedural_programming">procedural programming language</a>, ofcourse you also have <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP languages</a>, and <a href="https://en.wikipedia.org/wiki/Functional_programming">functional programming languages</a>.</p>
+<br />
+<h2 id="ai-code-generation">AI code generation</h2>
+<p>But what will be the future of software development? What will future programs be written in? How will they defer from programs nowadays? afterall, programs from 1970 (assembly languages and other low-level languages) looked radically different from what we know and love today.</p>
+<p>One of the major recent development that is casting a dark shadow over the realm
+of software development is AI assisted code generation. You give it a text, often
+in the form of a comment, and the system will analyze the text, and return you with
+the fitting code that you can then accept, or deny.</p>
+<p>One such systems is 'Github Copilot' (which <a href="/copilot-thoughts/">I personally use</a>, the 100 euro a year is very much worth it).
+Github Copilot is Github's code generation product that runs on Open-Ai's GPT-3 and is trained on millions of lines of open source github-hosted code.</p>
+<p>Combining the idea of <code>AI code generation</code> and <code>Esoteric programming languages</code>,
+I came up with an idea of a textual esoteric programming language that uses AI code
+generation to come up with the entire program, and then run it.</p>
+<p>An example of a script written in such language might look like this:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>ask what the users name is.
+</span><span>greet the user by saying &#39;well hello there {insert name}&#39;
+</span></code></pre>
+<p>If I input the name <code>james</code>, the program would then respond with <code>well hello there james</code>.</p>
+<p>This way, you could write an entire program using just natural speaking language.
+It sounds like a very esoteric idea right now, but who knows, it might be a popular
+scripting paradigm in the (near) future.</p>
+<br />
+<h2 id="positives">Positives</h2>
+<p>This idea might be a very good idea for a few different reasons. First off, programs
+that are written using this technique are extremely easy to understand when looking at
+isolated lines of code. The code itself is essential, and quite literally 'self documenting'.</p>
+<p>This aspect of the language brings us to the second point, which is that it is very
+easy to be used by non programmers to, for example: automate some task, or do something
+that would take a human ages like sorting/editing thousands of files.</p>
+<p>The language would essentially be a scripting language on steroids.</p>
+<br />
+<h2 id="negatives">Negatives</h2>
+<p>On the negative side, this idea has a lot of major flaws: the code would quickly become
+unmaintainable in large codebases, as the code would be very hard to read and understand
+when looking at the entire program.</p>
+<p>One line might be easy to understand for even non-programmers, but when looking at the
+entire codebase including million of lines of natural language, it would be practically
+impossible to find that one bug that is causing some logic error.</p>
+<p>Another major flaw is that (for now) these text-to-code AI are non-deterministic, meaning
+that the same text input will not always result in the same code output. Combining this with
+the fact that AI might (for now) make mistakes occasionally, often caused by unclear explaining
+in the natural language.</p>
+<p>This would mean that a program might change it's behavior from one run/build to another, introducing a horrible amount of near-impossible to fix inconsistencies</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>find the file named something.txt in the current directory
+</span><span>write &#39;hello world&#39; to the file
+</span></code></pre>
+<p>This code might sometimes replace the contents of the file with 'hello world', and sometimes
+it might append it instead, it would be impossible to know which one it will do.</p>
+<br />
+<h2 id="conclusion">Conclusion</h2>
+<p>Even tho we might see technology like this in the future, I don't think it will catch on
+into mainstream production level programming. Big companies with complex software products
+simply cant handle the huge scalability-handycap that this idea has, and the codebase would
+quickly become an un-understandable mess.</p>
+<p>However, for individuals that are not into programming and/or want to quickly create some
+script to automize some task, this might be a very good idea, for example, a program like this:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>open the downloads folder and look what files are in it.
+</span><span>
+</span><span>for each file, categorize what type of file it is by looking
+</span><span>at the file extension. for example:
+</span><span>    - .jpg, .jpeg, .gif, .png will all become &#39;images&#39;
+</span><span>    - .mp4, .avi, .mkv, .mov will all become &#39;videos&#39;
+</span><span>
+</span><span>look at the extension of the file in it,
+</span><span>and copy it to C://organized_downloads/{category}/
+</span><span>delete the original file in the downloads folder
+</span></code></pre>
+<br />
+<blockquote>
+<p>Artificial intelligence is a great tool to be used as a compensation for our natural stupidity</p>
+</blockquote>
+
+        </div>
+
+        
+        <div class="pagination">
+            <div class="pagination__title">
+                <span class="pagination__title-h">Thanks for reading! Read other posts?</span>
+                <hr />
+            </div>
+            <div class="pagination__buttons">
+                    <span class="button previous">
+                        <a href="http://lukedev.nl/copilot-thoughts/">
+                            <span class="button__icon">←</span>&nbsp;
+                            <span class="button__text">Thoughts on ‘Github Copilot’ after 4 months</span>
+                        </a>
+                    </span>
+                
+                </div>
+        </div>
+    
+    </div>
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer__inner">
+                <div class="copyright copyright--user">Website Created By <a href='https://github.com/justlucdewit' style='padding-left: 10px'>Luc de Wit</a></div>
+            </div>
+    </footer>
+    
+
+    <script>
+        // Find element with id age
+        const el_age = document.getElementById('age');
+
+        // Set birth to 30 july 2001 at 19:00
+        const birth = new Date(2001, 6, 30, 19, 0, 0);
+
+        // In a loop, update age every second
+        setInterval(() => {
+            // Get current date
+            const now = new Date();
+
+            // Calculate age as float
+            const age = (now - birth) / 1000 / 60 / 60 / 24 / 365;
+
+            // Update age
+            el_age.innerHTML = age.toFixed(8);
+        }, 200);
+
+        const contactForm = () => {
+            const msg = document.getElementById('msg').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            document.getElementById('msg').value = ""
+            document.getElementById('name').value = ""
+            document.getElementById('email').value = ""
+
+            alert("message send!");
+
+            // send message via discord webhook
+            fetch('https://discord.com/api/webhooks/1027939719058829342/eaZtxghceOFzGaRbceCacKn3c7wcwAH8o-rj8awXPI5peFRb4OPdqJtExOdCop0Xf0tR', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    content: '<@332071218066751490> \n' + '**msg from: ' + name + ' (' + email + ')' + '**:\n```' + msg + '```'
+                })
+            })
+        }
+
+        const avatars = [
+            "black", "comradeluke", "github", "green", "red", "python", "love"
+        ];
+
+        const randomAvatar = () => {
+            let avatar = avatars[Math.floor(Math.random() * avatars.length)];
+            
+            // In october use halloween or frankenluke instead
+            if (new Date().getMonth() == 9) {
+                avatar = "frankenluke";
+            }
+            
+            // In june use bi instead
+            if (new Date().getMonth() == 5) {
+                avatar = "bi";
+            }
+            
+            document.getElementById('avatar').src = '/images/lukes/' + avatar + '.png';
+        }
+
+        randomAvatar();
+    </script>
+
+</div>
+</body>
+
+</html>
